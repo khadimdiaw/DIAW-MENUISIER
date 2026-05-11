@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="SANOU SERVICES GARDIENNAGE ET NETTOYAGE (SSGN) recrute des agents de sécurité et femmes de ménage à Dakar. Contact 33 854 40 33.">
+<meta name="keywords" content="SSGN, Sanou Services, gardiennage Sénégal, société de sécurité Dakar, recrutement vigile, femme de ménage Dakar">
+<meta name="author" content="SANOU SERVICES SECURITE GENERALE ET NETTOYAGE">
+    <title>SSGN – SANOU SERVICES SECURITE GENERALE & Nettoyage</title>
+    <style>
+        :root {
+            --bleu: #0b2c5d;
+            --jaune: #f1b500;
+            --gris: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: var(--gris);
+            color: #333;
+        }
+
+        /* ================= HEADER ================= */
+        header {
+            background: linear-gradient(rgba(11,44,93,0.85), rgba(11,44,93,0.85)),
+                        url('https://images.unsplash.com/photo-1590496793929-36417d3117fb');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 30px 20px 60px;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .logo .s {
+            background: white;
+            color: var(--bleu);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .logo .rest {
+            color: var(--jaune);
+        }
+
+        .menu-container {
+            position: relative;
+        }
+
+        .menu-btn {
+            background: white;
+            color: var(--bleu);
+            border: none;
+            padding: 12px 22px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .menu-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 55px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            min-width: 180px;
+            z-index: 1000;
+        }
+
+        .menu-dropdown a {
+            display: block;
+            padding: 12px;
+            text-decoration: none;
+            color: var(--bleu);
+            font-weight: bold;
+        }
+
+        .menu-dropdown a:hover {
+            background: var(--jaune);
+            color: white;
+        }
+
+        .hero {
+            max-width: 750px;
+            margin-top: 40px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: var(--jaune);
+            font-weight: bold;
+        }
+
+        /* ================= SECTIONS ================= */
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--bleu);
+            font-size: 32px;
+        }
+
+        /* ================= A PROPOS ================= */
+        .apropos-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .apropos-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .apropos-card h3 {
+            color: var(--bleu);
+            margin-bottom: 15px;
+        }
+
+        .apropos-card p {
+            line-height: 1.7;
+        }
+
+        /* ================= TEXTE - IMAGE SERVICES ================= */
+        .service-row {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .service-row img {
+            width: 45%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .service-text {
+            width: 55%;
+        }
+
+        .service-text h3 {
+            color: var(--bleu);
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .service-text p {
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .reverse {
+            flex-direction: row-reverse;
+        }
+
+        /* ================= RECRUTEMENT & CONTACT ================= */
+        .recrutement, .contact {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact {
+          text-align: center;
+            background: var(--bleu);
+            color: white;
+        }
+
+        section {
+  animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+        .recrutement-card {
+  max-width: 500px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.recrutement-card:hover {
+  transform: translateY(-5px);
+}
+
+.recrutement-card h2 {
+  text-align: center;
+  color: var(--bleu);
+  margin-bottom: 20px;
+}
+
+.recrutement-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.recrutement-card li {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.recrutement-card .mode {
+  margin-top: 20px;
+  padding: 15px;
+  background: var(--gris);
+  border-left: 5px solid var(--jaune);
+  border-radius: 8px;
+}
+
+      .contact-card {
+  max-width: 550px;
+  margin: auto;
+  padding: 35px;
+  background: linear-gradient(135deg, #0b2c5d, #123b7a);
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  text-align: center;
+}
+
+.contact-card h2 {
+  margin-bottom: 25px;
+  color: var(--jaune);
+}
+
+.contact-card p {
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+        footer {
+            background: #111;
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 768px) {
+            .service-row,
+            .reverse {
+                flex-direction: column;
+            }
+
+            .service-row img,
+            .service-text {
+                width: 100%;
+            }
+            
+            /* ================= VIDEO SECTION ================= */
+.iframe-section {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  margin: 40px auto;
+  max-width: 900px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.iframe-section h3 {
+  color: var(--bleu);
+  margin-bottom: 10px;
+  font-size: 26px;
+}
+
+.iframe-section p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.iframe-section video {
+  width: 100%;
+  max-height: 450px;
+  border-radius: 12px;
+}
+
+      .fullscreen-btn {
+  margin-top: 15px;
+  padding: 12px 25px;
+  background: var(--bleu);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="top-bar">
+        <div class="logo">
+            <span class="s"></span>
+            <h1></h1><span class="rest">MENUISIER</span></h1>
+        </div>
+
+        <div class="menu-container">
+            <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+            <div class="menu-dropdown" id="menu">
+                <a href="#apropos">À propos</a>
+                <a href="#services">Services</a>
+                <a href="#recrutement">Recrutement</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero">
+        <h1>SANOU SERVICES GARDIENNAGE & NETTOYAGE</h1>
+        <h3>Votre partenaire de confiance en <span class="highlight">sécurité</span> en <span class="highlight">sécurité incendie</span> et <span class="highlight">propreté</span>.</h3>
+    </div>
+</header>
+
+<section id="apropos">
+    <h2>À propos de S.S.G.N</h2>
+    <div class="apropos-content">
+        <div class="apropos-card">
+            <h3>Notre Mission</h3>
+            <p>
+                SANOU SERVICES (SSGN) accompagne entreprises et particuliers
+                dans la sécurité, la propreté et la prévention des risques
+                avec professionnalisme et rigueur.
+            </p>
+        </div>
+
+        <div class="apropos-card">
+            <h3>Notre Engagement</h3>
+            <p>
+                Nous mettons à disposition des agents formés, disciplinés
+                et responsables afin d’assurer la protection des personnes,
+                des biens et des locaux.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+  
+      <p class="NOS SERVICES">
+      <h2><strong>NOS SERVICES</strong></h2>
+    </p>
+  
+   <h2> <h2>securite generale</h2> 
+        
+    <h2>nettoyage totale</h2> </h2>
+
+    <iframe
+  src="https://player.cloudinary.com/embed/?cloud_name=dv4harxzo&public_id=VID-20260203-WA0001_xivcui"
+  width="100%"
+  height="250"
+  allow="autoplay; fullscreen; encrypted-media"
+  allowfullscreen
+  frameborder="0">
+</iframe>
+
+<div class="service-row">
+       
+        <div class="service-text">
+            <h3>SECURITE GENERALE</h3>
+            <p>
+                Protection des personnes et des biens grâce à des agents qualifiés,
+                spécialisés dans la surveillance, le contrôle d’accès et la prévention
+                des risques.
+            </p>
+        </div>
+    </div>
+
+    <div class="service-row reverse">
+         <img src="https://res.cloudinary.com/dv4harxzo/image/upload/v1770195193/Screenshot_20260204-084617_Video_Player_slisdh.jpg">
+        
+        <div class="service-text">
+            <h3>NETOYAGE PROFESSIONNEL</h3>
+            <p>
+                Services de nettoyage pour bureaux, maisons et espaces professionnels,
+                garantissant hygiène, propreté et confort.
+            </p>
+        </div>
+    </div>
+
+    <div class="service-row">
+      <img src="https://res.cloudinary.com/dv4harxzo/image/upload/v1770198832/IMG-20260204-WA0002_uinfhi.jpg">
+        <div class="service-text">
+            <h3>SECURITE INCENDIE</h3>
+            <p>
+                Prévention des risques d’incendie, surveillance et intervention rapide
+                conformément aux normes de sécurité incendiaire.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="recrutement">
+  <div class="card recrutement-card">
+    <h2>Recrutement</h2>
+
+    <ul>
+      <li>👮 Agents de sécurité</li>
+      <li>🧹 Femmes de ménage</li>
+    </ul>
+
+    <p class="mode">
+      <strong>Mode :</strong> Dépôt physique des dossiers au siège.
+    </p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-card">
+    <h2>Contact</h2>
+
+    <p>📞 33 854 40 33</p>
+    <p>📱 +221 77 879 75 72</p>
+    <p>📧 sanouservices@yahoo.com</p>
+    <p>📍 Thiaroye Azur – Cité SOCABEC</p>
+    <p>🕘 Lun–Ven | 08h – 16h30</p>
+  </div>
+</section>
+
+<footer>
+    © 2026 KHADIM DIAW – SANOU SERVICES (SSGN)
+</footer>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html
