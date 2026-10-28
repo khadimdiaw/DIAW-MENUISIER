@@ -8,7 +8,7 @@
   <title>DIAW MENUISIER BOIS | Mobilier sur mesure</title>
   <meta name="description" content="Découvrez les réalisations de DIAW MENUISIER BOIS : meubles, chambres, salons, portes et menuiserie sur mesure à Dakar.">
 
-
+  
 <!-- LOGO DU SITE DIAW MENUISIER BOIS -->
 <link
   rel="icon"
@@ -18,10 +18,6 @@
 <!-- COULEUR DU NAVIGATEUR SUR MOBILE -->
 <meta name="theme-color" content="#171713">
 
-<link rel="manifest" href="./manifest.json">
-<meta name="theme-color" content="#171713">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="DIAW MENUISIER">
 
   <style>
     :root {
@@ -886,8 +882,8 @@
     width: min(260px, 85vw);
   }
 }
- 
-/* ===== PIED DE PAGE PROFESSIONNEL ===== */
+
+    /* ===== PIED DE PAGE PROFESSIONNEL ===== */
 
 .site-footer {
   background: #171713;
@@ -954,6 +950,7 @@
     font-size: 12px;
   }
 }
+
    
   </style>
 </head>
@@ -1206,11 +1203,22 @@
 
     </div>
   </div>
-</section> 
+</section>
+
+  
   
 </main>
 
-  <footer class="site-footer">
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visionneuse de photos">
+  <button class="lightbox-close" id="closeLightbox" aria-label="Fermer">&times;</button>
+  <button class="lightbox-prev" id="prevPhoto" aria-label="Photo précédente">&#8249;</button>
+  <img id="lightboxImage" src="" alt="Photo agrandie">
+  <button class="lightbox-next" id="nextPhoto" aria-label="Photo suivante">&#8250;</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
+
+<footer class="site-footer">
   <div class="footer-content">
     <div class="footer-brand">DIAW <span>MENUISIER BOIS</span></div>
 
@@ -1229,15 +1237,8 @@
       Site conçu avec passion par <strong>Khadim Diaw</strong>.
     </p>
   </div>
-</footer> 
-
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visionneuse de photos">
-  <button class="lightbox-close" id="closeLightbox" aria-label="Fermer">&times;</button>
-  <button class="lightbox-prev" id="prevPhoto" aria-label="Photo précédente">&#8249;</button>
-  <img id="lightboxImage" src="" alt="Photo agrandie">
-  <button class="lightbox-next" id="nextPhoto" aria-label="Photo suivante">&#8250;</button>
-  <div class="lightbox-counter" id="lightboxCounter"></div>
-</div>
+</footer>
+   
 
 
 <script>
@@ -1330,17 +1331,6 @@ document.addEventListener("click", function (event) {
     menuToggle.querySelector(".menu-icon").textContent = "☰";
   }
 });
-
-<script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js")
-      .catch(error => console.error(
-        "Erreur d'enregistrement du service worker :", error
-      ));
-  });
-}
-</script>
 
   
 </script>
