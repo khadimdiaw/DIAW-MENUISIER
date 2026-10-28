@@ -886,7 +886,74 @@
     width: min(260px, 85vw);
   }
 }
+ 
+/* ===== PIED DE PAGE PROFESSIONNEL ===== */
 
+.site-footer {
+  background: #171713;
+  color: #d8d1c6;
+  text-align: center;
+  padding: 38px 20px;
+  border-top: 3px solid #d9ad70;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-brand {
+  color: #ffffff;
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.footer-brand span {
+  color: #d9ad70;
+}
+
+.footer-tagline {
+  color: #d9ad70;
+  font-size: 14px;
+  font-style: italic;
+  margin-bottom: 22px;
+}
+
+.footer-divider {
+  width: 65px;
+  height: 2px;
+  background: #d9ad70;
+  margin: 0 auto 22px;
+}
+
+.footer-copyright,
+.footer-creator {
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 5px 0;
+}
+
+.footer-copyright strong,
+.footer-creator strong {
+  color: #d9ad70;
+}
+
+@media (max-width: 480px) {
+  .site-footer {
+    padding: 30px 15px;
+  }
+
+  .footer-brand {
+    font-size: 19px;
+  }
+
+  .footer-copyright,
+  .footer-creator {
+    font-size: 12px;
+  }
+}
    
   </style>
 </head>
@@ -1155,13 +1222,28 @@
 
 
 
-   
+  <footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-brand">DIAW <span>MENUISIER BOIS</span></div>
 
-<footer>
-  <div class="container">
-    © 2026 <strong>DIAW MENUISIER BOIS</strong> .
+    <p class="footer-tagline">
+      L'art du bois, le souci du détail.
+    </p>
+
+    <div class="footer-divider"></div>
+
+    <p class="footer-copyright">
+      &copy; 2026 <strong>DIAW MENUISIER BOIS</strong>.
+      Tous droits réservés.
+    </p>
+
+    <p class="footer-creator">
+      Site conçu avec passion par <strong>Khadim Diaw</strong>.
+    </p>
   </div>
-</footer>
+</footer> 
+
+
 
 <script>
   const photoLinks = [...document.querySelectorAll(".gallery-item")];
