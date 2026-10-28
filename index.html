@@ -1,484 +1,1245 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171713">
+  <title>DIAW MENUISIER BOIS | Mobilier sur mesure</title>
+  <meta name="description" content="Découvrez les réalisations de DIAW MENUISIER BOIS : meubles, chambres, salons, portes et menuiserie sur mesure à Dakar.">
 
-    <title>DIAW MENUISIER BOIS</title>
-    <style>
-        :root {
-            --bleu: #0b2c5d;
-            --jaune: #f1b500;
-            --gris: #f5f5f5;
-        }
+  <style>
+    :root {
+      --dark: #171713;
+      --wood: #a96e3b;
+      --gold: #d9ad70;
+      --cream: #f7f3ed;
+      --white: #fff;
+      --muted: #77736c;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        body {
-            background: var(--gris);
-            color: #333;
-        }
+    html { scroll-behavior: smooth; }
 
-        /* ================= HEADER ================= */
-        header {
-            background: linear-gradient(rgba(11,44,93,0.85), rgba(11,44,93,0.85)),
-                        url('https://images.unsplash.com/photo-1590496793929-36417d3117fb');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 30px 20px 60px;
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+    }
 
-        .top-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    a { color: inherit; text-decoration: none; }
 
-        .logo {
-            font-size: 32px;
-            font-weight: bold;
-        }
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
 
-        .logo .s {
-            background: white;
-            color: var(--bleu);
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
+    header {
+      background: var(--dark);
+      color: white;
+      padding: 17px 0;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 3px 18px #0002;
+    }
 
-        .logo .rest {
-            color: var(--jaune);
-        }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-        .menu-container {
-            position: relative;
-        }
+    .brand {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
 
-        .menu-btn {
-            background: white;
-            color: var(--bleu);
-            border: none;
-            padding: 12px 22px;
-            border-radius: 25px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+    .brand span { color: var(--gold); }
 
-        .menu-dropdown {
-            display: none;
-            position: absolute;
-            right: 0;
-            top: 55px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            min-width: 180px;
-            z-index: 1000;
-        }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      font-size: 14px;
+    }
 
-        .menu-dropdown a {
-            display: block;
-            padding: 12px;
-            text-decoration: none;
-            color: var(--bleu);
-            font-weight: bold;
-        }
+    nav a:hover { color: var(--gold); }
 
-        .menu-dropdown a:hover {
-            background: var(--jaune);
-            color: white;
-        }
+    .nav-cta, .btn {
+      display: inline-block;
+      padding: 12px 19px;
+      border-radius: 5px;
+      font-weight: 700;
+      transition: .25s;
+    }
 
-        .hero {
-            max-width: 750px;
-            margin-top: 40px;
-        }
+    .nav-cta, .btn-gold {
+      background: var(--gold);
+      color: #20170e;
+    }
 
-        .hero h1 {
-            font-size: 36px;
-            margin-bottom: 15px;
-        }
+    .btn:hover, .nav-cta:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.06);
+    }
 
-        .highlight {
-            color: var(--jaune);
-            font-weight: bold;
-        }
+    .hero {
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      color: white;
+      background:
+        linear-gradient(90deg, #15130ff0 0%, #15130fa8 55%, #15130f45 100%),
+        url("https://images.unsplash.com/photo-1590496793929-36417d3117fb?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+    }
 
-        /* ================= SECTIONS ================= */
-        section {
-            padding: 60px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
+    .hero-content { max-width: 700px; padding: 85px 0; }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            color: var(--bleu);
-            font-size: 32px;
-        }
+    .eyebrow {
+      color: var(--wood);
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      margin-bottom: 13px;
+    }
 
-        /* ================= A PROPOS ================= */
-        .apropos-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
+    .hero .eyebrow { color: var(--gold); }
 
-        .apropos-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
+    h1 {
+      font-size: clamp(36px, 5.6vw, 65px);
+      line-height: 1.08;
+      margin-bottom: 22px;
+    }
 
-        .apropos-card h3 {
-            color: var(--bleu);
-            margin-bottom: 15px;
-        }
+    .hero p {
+      max-width: 570px;
+      color: #eee9e1;
+      font-size: 17px;
+      margin-bottom: 28px;
+    }
 
-        .apropos-card p {
-            line-height: 1.7;
-        }
+    .btn-outline {
+      border: 1px solid #ffffffa8;
+      color: white;
+      margin-left: 8px;
+    }
 
-        /* ================= TEXTE - IMAGE SERVICES ================= */
-        .service-row {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 60px;
-        }
+    section { padding: 82px 0; }
 
-        .service-row img {
-            width: 45%;
-            max-height: 300px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
+    .section-heading {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 38px;
+    }
 
-        .service-text {
-            width: 55%;
-        }
+    .section-heading h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.2;
+      margin-bottom: 13px;
+    }
 
-        .service-text h3 {
-            color: var(--bleu);
-            margin-bottom: 15px;
-            font-size: 24px;
-        }
+    .section-heading p { color: var(--muted); }
 
-        .service-text p {
-            line-height: 1.7;
-            font-size: 16px;
-        }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
 
-        .reverse {
-            flex-direction: row-reverse;
-        }
+    .about-grid h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
 
-        /* ================= RECRUTEMENT & CONTACT ================= */
-        .recrutement, .contact {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
+    .about-grid p { color: #625e57; margin-bottom: 15px; }
 
-        .contact {
-          text-align: center;
-            background: var(--bleu);
-            color: white;
-        }
+    .about-panel {
+      background: #e9dfd1;
+      padding: 34px;
+      border-left: 4px solid var(--wood);
+      border-radius: 8px;
+    }
 
-        section {
-  animation: fadeUp 0.8s ease;
+    .about-panel h3 { margin-bottom: 12px; }
+    .about-panel li { margin: 9px 0 9px 20px; }
+
+    .video-section { background: white; }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .video-card {
+      background: var(--cream);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 28px #21170c0c;
+    }
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #1d1d1a;
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-copy { padding: 22px; }
+    .video-copy h3 { margin-bottom: 7px; font-size: 20px; }
+    .video-copy p { color: var(--muted); font-size: 14px; }
+
+    .gallery-intro {
+      background: var(--dark);
+      color: white;
+      padding: 44px 25px;
+      text-align: center;
+      border-radius: 12px;
+      margin-bottom: 38px;
+    }
+
+    .gallery-intro h2 {
+      font-size: clamp(27px, 4vw, 39px);
+      margin-bottom: 12px;
+    }
+
+    .gallery-intro p {
+      max-width: 730px;
+      margin: 0 auto 22px;
+      color: #e2ddd4;
+    }
+
+    /* ALBUM PHOTO PROFESSIONNEL */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-auto-rows: 245px;
+      gap: 17px;
+    }
+
+    .gallery-item {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      border-radius: 10px;
+      background: #ddd4c8;
+      cursor: zoom-in;
+      isolation: isolate;
+    }
+
+    .gallery-item:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery-item:nth-child(4) {
+      grid-column: span 2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform .55s ease, filter .4s ease;
+    }
+
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: 35% 0 0;
+      z-index: 1;
+      background: linear-gradient(transparent, #090806d9);
+      opacity: .8;
+      transition: opacity .3s;
+      pointer-events: none;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.07);
+      filter: saturate(1.08);
+    }
+
+    .gallery-item:hover::after { opacity: 1; }
+
+    .photo-caption {
+      position: absolute;
+      z-index: 2;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      color: white;
+      transform: translateY(5px);
+      transition: transform .3s;
+      pointer-events: none;
+    }
+
+    .photo-caption small {
+      display: block;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .photo-caption strong { font-size: 17px; }
+    .gallery-item:hover .photo-caption { transform: translateY(0); }
+
+    .gallery-note {
+      margin-top: 23px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    /* FENÊTRE PHOTO AGRANDIE */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: #090909f5;
+      padding: 55px 65px;
+    }
+
+    .lightbox.open { display: flex; }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: 5px;
+      box-shadow: 0 10px 50px #0008;
+    }
+
+    .lightbox button {
+      position: absolute;
+      border: 0;
+      cursor: pointer;
+      color: white;
+      background: #ffffff20;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 27px;
+    }
+
+    .lightbox button:hover { background: #ffffff40; }
+    .lightbox-close { top: 18px; right: 20px; }
+    .lightbox-prev { left: 15px; }
+    .lightbox-next { right: 15px; }
+
+    .lightbox-counter {
+      position: absolute;
+      bottom: 15px;
+      color: #ddd;
+      font-size: 14px;
+    }
+
+    .cta-band {
+      background: #e8d7c2;
+      text-align: center;
+      padding: 58px 20px;
+    }
+
+    .cta-band h2 {
+      font-size: clamp(27px, 4vw, 38px);
+      margin-bottom: 12px;
+    }
+
+    .cta-band p {
+      color: #62584c;
+      margin: 0 auto 23px;
+      max-width: 700px;
+    }
+
+    
+/* ===== SECTION CONTACT : STYLE PREMIUM ===== */
+
+.contact-section {
+  background: #f7f3ed;
+  padding: 85px 0;
 }
 
-@keyframes fadeUp {
+.contact-section .section-heading {
+  margin-bottom: 45px;
+}
+
+.contact-section .section-heading h2 {
+  color: #171713;
+  font-size: clamp(30px, 5vw, 44px);
+  font-weight: 800;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.contact-card {
+  position: relative;
+  overflow: hidden;
+  padding: 30px;
+  min-height: 190px;
+  background: #ffffff;
+  border: 1px solid #e6d9c8;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(38, 29, 18, 0.05);
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
+}
+
+/* Bande dorée décorative */
+.contact-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: #d9ad70;
+  transition: width 0.3s ease;
+}
+
+/* Petit accent décoratif */
+.contact-card::after {
+  content: "";
+  position: absolute;
+  width: 95px;
+  height: 95px;
+  right: -38px;
+  bottom: -43px;
+  border: 1px solid #d9ad7045;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  border-color: #d9ad70;
+  box-shadow: 0 16px 35px rgba(38, 29, 18, 0.12);
+}
+
+.contact-card:hover::before {
+  width: 8px;
+}
+
+.contact-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 17px;
+  color: #171713;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+/* Icônes des quatre cartes */
+.contact-card:nth-child(1) h3::before {
+  content: "☎";
+}
+
+.contact-card:nth-child(2) h3::before {
+  content: "✉";
+}
+
+.contact-card:nth-child(3) h3::before {
+  content: "⌖";
+}
+
+.contact-card:nth-child(4) h3::before {
+  content: "◷";
+}
+
+.contact-card h3::before {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 43px;
+  height: 43px;
+  border-radius: 10px;
+  background: #171713;
+  color: #d9ad70;
+  font-size: 23px;
+}
+
+.contact-card p {
+  position: relative;
+  z-index: 1;
+  margin: 7px 0;
+  color: #716d66;
+  font-size: 17px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.contact-card a {
+  color: #716d66;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-card a:hover {
+  color: #a96e3b;
+  text-decoration: underline;
+}
+
+/* Adaptation mobile */
+@media (max-width: 760px) {
+  .contact-section {
+    padding: 60px 0;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .contact-card {
+    min-height: auto;
+    padding: 25px 23px;
+    border-radius: 12px;
+  }
+
+  .contact-card h3 {
+    font-size: 21px;
+  }
+
+  .contact-card p {
+    font-size: 16px;
+  }
+}
+
+
+/* BOUTON WHATSAPP */
+.whatsapp {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 9999;
+
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #25D366;
+  color: #ffffff;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.whatsapp svg {
+  width: 34px;
+  height: 34px;
+  display: block;
+}
+
+.whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 600px) {
+  .whatsapp {
+    width: 54px;
+    height: 54px;
+    right: 15px;
+    bottom: 15px;
+  }
+
+  .whatsapp svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+    
+    
+
+
+    @media (max-width: 760px) {
+      .nav { flex-wrap: wrap; }
+      nav {
+        width: 100%;
+        justify-content: center;
+        gap: 13px;
+        flex-wrap: wrap;
+      }
+
+      .nav-cta { display: none; }
+      .hero { min-height: 480px; }
+      .hero-content { padding: 65px 0; }
+      .about-grid { grid-template-columns: 1fr; gap: 25px; }
+      .video-grid { grid-template-columns: 1fr; }
+
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 190px;
+        gap: 10px;
+      }
+
+      .gallery-item:first-child { grid-row: span 2; }
+      .gallery-item:nth-child(4) { grid-column: span 1; }
+      .photo-caption { padding: 12px; }
+      .photo-caption strong { font-size: 14px; }
+      .lightbox { padding: 50px 10px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      section { padding: 60px 0; }
+    }
+
+    @media (max-width: 420px) {
+      .brand { font-size: 16px; }
+      nav { font-size: 12px; }
+      .hero .btn { margin: 5px 0; }
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 155px;
+      }
+      .gallery-item:first-child { grid-row: span 2; }
+      .gallery-intro { padding: 30px 18px; }
+      .floating-whatsapp { right: 12px; bottom: 12px; }
+    }
+
+   
+/* ===== SECTION CREATEUR DU SITE ===== */
+.createur-section {
+  background: #f7f3ed;
+  padding: 82px 0;
+}
+
+.createur-card {
+  width: min(1050px, 92%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  align-items: stretch;
+  background: #171713;
+  color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(40, 29, 16, 0.16);
+  border: 1px solid rgba(169, 110, 59, 0.25);
+}
+
+.createur-photo {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background: #292720;
+}
+
+.createur-info {
+  padding: 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.createur-label {
+  display: inline-block;
+  width: fit-content;
+  color: #d9ad70;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.7;
+  margin-bottom: 13px;
+}
+
+.createur-info h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.15;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.createur-info h3 {
+  color: #d9ad70;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 22px;
+  font-weight: 600;
+}
+
+.createur-info p {
+  color: #ddd7cd;
+  font-size: 14px;
+  line-height: 1.9;
+  margin-bottom: 15px;
+}
+
+.createur-competences {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.createur-competences span {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 12px;
+  border: 1px solid rgba(217, 173, 112, 0.35);
+  border-radius: 6px;
+  background: rgba(217, 173, 112, 0.08);
+  color: #f0dfc8;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.createur-competences span:hover {
+  background: rgba(217, 173, 112, 0.18);
+  transform: translateY(-2px);
+}
+
+.createur-separateur {
+  width: 65px;
+  height: 3px;
+  background: #d9ad70;
+  border-radius: 5px;
+  margin: 0 0 22px;
+}
+
+/* Adaptation aux téléphones et tablettes */
+@media (max-width: 760px) {
+  .createur-section {
+    padding: 60px 0;
+  }
+
+  .createur-card {
+    grid-template-columns: 1fr;
+    width: min(520px, 92%);
+  }
+
+  .createur-photo {
+    height: 320px;
+    min-height: 0;
+    object-position: center 35%;
+  }
+
+  .createur-info {
+    padding: 28px 23px;
+  }
+
+  .createur-info h2 {
+    font-size: 32px;
+  }
+
+  .createur-info h3 {
+    font-size: 15px;
+  }
+
+  .createur-competences {
+    gap: 8px;
+  }
+
+  .createur-competences span {
+    font-size: 11px;
+  }
+}
+
+    
+/* ===== MENU DEROULANT NOIR ET DORE ===== */
+
+.menu-container {
+  position: relative;
+  margin-left: auto;
+}
+
+.menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 19px;
+  border: 1px solid #d9ad70;
+  border-radius: 7px;
+  background: #d9ad70;
+  color: #171713;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: .25s ease;
+}
+
+.menu-toggle:hover {
+  background: #f0d1a2;
+  transform: translateY(-2px);
+}
+
+.menu-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.main-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 230px;
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  padding: 8px;
+  background: #171713;
+  border: 1px solid #4b3a27;
+  border-radius: 10px;
+  box-shadow: 0 14px 35px #0003;
+  z-index: 100;
+}
+
+.main-menu.open {
+  display: flex;
+  animation: menuAppear .2s ease;
+}
+
+.main-menu a {
+  display: block;
+  padding: 13px 15px;
+  color: #f7f3ed;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: .2s ease;
+}
+
+.main-menu a:hover,
+.main-menu a:focus-visible {
+  background: #30271c;
+  color: #d9ad70;
+  padding-left: 20px;
+}
+
+@keyframes menuAppear {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(-7px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-        .recrutement-card {
-  max-width: 500px;
-  margin: auto;
-  padding: 30px;
-  border-radius: 15px;
-  background: white;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
+
+@media (max-width: 760px) {
+  .nav {
+    flex-wrap: nowrap;
+  }
+
+  .brand {
+    font-size: 15px;
+    max-width: 65%;
+  }
+
+  .menu-toggle {
+    padding: 11px 13px;
+  }
+
+  .main-menu {
+    width: min(260px, 85vw);
+  }
 }
 
-.recrutement-card:hover {
-  transform: translateY(-5px);
-}
-
-.recrutement-card h2 {
-  text-align: center;
-  color: var(--bleu);
-  margin-bottom: 20px;
-}
-
-.recrutement-card ul {
-  list-style: none;
-  padding: 0;
-}⁸
-
-.recrutement-card li {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.recrutement-card .mode {
-  margin-top: 20px;
-  padding: 15px;
-  background: var(--gris);
-  border-left: 5px solid var(--jaune);
-  border-radius: 8px;
-}
-
-      .contact-card {
-  max-width: 550px;
-  margin: auto;
-  padding: 35px;
-  background: linear-gradient(135deg, #0b2c5d, #123b7a);
-  color: white;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-  text-align: center;
-}
-
-.contact-card h2 {
-  margin-bottom: 25px;
-  color: var(--jaune);
-}
-
-.contact-card p {
-  font-size: 17px;
-  margin-bottom: 12px;
-}
-        footer {
-            background: #111;
-            color: #ccc;
-            text-align: center;
-            padding: 20px;
-        }
-
-        /* ================= RESPONSIVE ================= */
-        @media (max-width: 768px) {
-            .service-row,
-            .reverse {
-                flex-direction: column;
-            }
-
-            .service-row img,
-            .service-text {
-                width: 100%;
-            }
-            
-            /* ================= VIDEO SECTION ================= */
-.iframe-section {
-  background: white;
-  padding: 40px;
-  border-radius: 15px;
-  margin: 40px auto;
-  max-width: 900px;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-}
-
-.iframe-section h3 {
-  color: var(--bleu);
-  margin-bottom: 10px;
-  font-size: 26px;
-}
-
-.iframe-section p {
-  margin-bottom: 20px;
-  font-size: 16px;
-}
-
-.iframe-section video {
-  width: 100%;
-  max-height: 450px;
-  border-radius: 12px;
-}
-
-      .fullscreen-btn {
-  margin-top: 15px;
-  padding: 12px 25px;
-  background: var(--bleu);
-  color: white;
-  border: none;
-  border-radius: 25px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-            .whatsapp-btn{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 60px;
-    font-size: 30px;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-            .whatsapp{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: green;
-    color: white;
-    padding: 15px;
-    border-radius: 50px;
-    text-decoration: none;
-}
-            
-        }
-    </style>
+   
+  </style>
 </head>
 
 <body>
 
+  
 <header>
-    <div class="top-bar">
-        <div class="logo">
-            <span class="s">DIAW</span>
-            <h1></h1><span class="rest">MENUISIER BOIS</span></h1>
-        </div>
+  <div class="container nav">
 
-        <div class="menu-container">
-            <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
-            <div class="menu-dropdown" id="menu">
-                <a href="#apropos">À propos</a>
-                <a href="#services">Services</a>
-                <a href="#recrutement">Recrutement</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </div>
+    <a class="brand" href="#accueil">
+     <h2>  DIAW <span>MENUISIER BOIS</span>
+  </h2>  </a>
+
+    <div class="menu-container">
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="mainMenu">
+        <span class="menu-icon">☰</span>
+        <span>Menu</span>
+      </button>
+
+      <nav id="mainMenu" class="main-menu">
+        <a href="#accueil">⌂ Accueil</a>
+        <a href="#apropos">À propos</a>
+        <a href="#videos">▷ Vidéos</a>
+        <a href="#galerie">▦ Album photos</a>
+        <a href="#contact">✉ Contact</a>
+        <a href="#createur">👨‍💻 Le concepteur</a>
+      </nav>
     </div>
 
-    <div class="hero">
-        <h1> Nous transformons le bois en élégance.
-Fabrication de salons, chambres à coucher, portes, cadres et meubles sur mesure </h1>
-        <h3>Votre partenaire de confiance en <span class="highlight">meuble</span> en <span class="highlight">designe</span> et <span class="highlight">decoration</span>.</h3>
-    </div>
+  </div>
 </header>
 
-<section id="apropos">
-    <h2>À propos de DIAW MENUISIER BOIS</h2>
-    <div class="apropos-content">
-        <div class="apropos-card">
-            <h3>Notre Mission</h3>
-            <p>
-                Notre mission est de transformer le bois en créations uniques grâce à un savoir-faire professionnel, des matériaux de qualité et une passion pour le design et la satisfaction client.
-            </p>
-        </div>
 
-        <div class="apropos-card">
-            <h3>Notre Engagement</h3>
-            <p>
-                Nous nous engageons à fournir des réalisations en bois alliant qualité, esthétique et durabilité, tout en garantissant un service professionnel, des délais respectés et la satisfaction totale de nos clients.
-            </p>
-        </div>
-    </div>
-</section>
-
-<section id="services">
-  
-     <h2>NOS SERVICES </h2>
-      <h2>Albums Et Photos</h2>
-
-    <iframe
-  src=" https://player.cloudinary.com/embed/?cloud_name=dv4harxzo&public_id=Facebook_1778236408416_360p_uqcdis "
-  width="100%"
-  height="300"
-  allow="autoplay; fullscreen; encrypted-media"
-  allowfullscreen
-  frameborder="0">
-      </iframe>
-      <iframe
-  src=" https://player.cloudinary.com/embed/?cloud_name=dv4harxzo&public_id=Facebook_1778237022255_360p_ea8egw "
-  width="100%"
-  height="300"
-  allow="autoplay; fullscreen; encrypted-media"
-  allowfullscreen
-  frameborder="0">
-</iframe>
-
-<div class="service-row">
-       
-        <div class="service-text">
-          
-            <p>
-                
-            </p>
-        </div>
-    </div>
-
-         
- <div class="service-row reverse">
-         <img src=" https://res.cloudinary.com/dv4harxzo/image/upload/v1778238065/images_lcpv1n.jpg ">
-         <img src=" https://res.cloudinary.com/dv4harxzo/image/upload/v1778239283/images_1_tkyb0n.jpg ">
-         <img src=" https://res.cloudinary.com/dv4harxzo/image/upload/v1778240119/images_5_otr4ym.jpg ">
-         <img src=" https://res.cloudinary.com/dv4harxzo/image/upload/v1778240119/images_4_i7ivfp.jpg ">
-         <img src=" https://res.cloudinary.com/dv4harxzo/image/upload/v1778240120/images_6_wcn1wo.jpg ">
-         
+<main>
+  <section class="hero" id="accueil">
+    <div class="container">
+      <div class="hero-content">
+     
         
-        <div class="service-text">
-           
-        </div>
+     <div class="eyebrow"> <h1> L'art du bois  </h1> </div>
+       
+        <h1>Le bois prend vie entre nos mains.</h1>
+        <p>Fabrication de salons, chambres à coucher, portes, cadres et meubles sur mesure. Nous donnons forme à vos idées avec élégance et savoir-faire.</p>
+        <a class="btn btn-gold" href="#galerie">Découvrir nos réalisations</a>
+        <a class="btn btn-outline" href="https://wa.me/221763263633?text=Bonjour%2C%20je%20souhaite%20discuter%20d%27un%20projet%20de%20menuiserie." target="_blank" rel="noopener noreferrer">Parlons de votre projet</a>
+      </div>
     </div>
+  </section>
 
-</section>
+  <section id="apropos">
+    <div class="container about-grid">
+      <div>
+        <div class="eyebrow">Notre savoir-faire</div>
+        <h2>Des créations en bois pensées pour votre intérieur.</h2>
+        <p>Chez DIAW MENUISIER BOIS, chaque projet est l'occasion d'allier fonctionnalité, esthétique et finitions soignées.</p>
+        <p>Notre objectif : vous accompagner dans la réalisation de meubles qui correspondent à vos besoins, à votre espace et à vos goûts.</p>
+      </div>
 
+      <div class="about-panel">
+        <h3>Notre engagement</h3>
+        <ul>
+          <li>Des réalisations adaptées à vos besoins</li>
+          <li>Une attention particulière aux finitions</li>
+          <li>Des conseils pour votre projet</li>
+          <li>Un contact direct pour vos demandes de devis</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<section id="contact">
-  <div class="contact-card">
-    <h2>Contact</h2>
+  <section class="video-section" id="videos">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">En images animées</div>
+        <h2>Découvrez notre savoir-faire en vidéo</h2>
+        <p>Parce qu'une réalisation se découvre aussi dans ses détails, prenez quelques instants pour explorer notre univers et découvrir le travail du bois.</p>
+      </div>
 
-    <p> 📱 +221 76 326 36 33 </p>
-    <p>📱 +221 77 636 68 75</p>
-    <p>📧 diawmenuisier@gmail.com</p>
-    <p>📍 Castors – Route front de terre</p>
-    <p>🕘 Lun–Sam | 08h – 18h00</p>
+      <div class="video-grid">
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe
+              src="https://player.cloudinary.com/embed/?cloud_name=dv4harxzo&public_id=Facebook_1778236408416_360p_uqcdis"
+              title="Vidéo de DIAW MENUISIER BOIS"
+              loading="lazy"
+              allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-copy">
+            <h3>Le bois, notre passion</h3>
+            <p>Découvrez notre univers et l'attention portée à chaque étape de la réalisation.</p>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe
+              src="https://player.cloudinary.com/embed/?cloud_name=dv4harxzo&public_id=Facebook_1778237022255_360p_ea8egw"
+              title="Présentation vidéo de DIAW MENUISIER BOIS"
+              loading="lazy"
+              allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-copy">
+            <h3>Le détail fait la différence</h3>
+            <p>Chaque projet mérite une attention particulière, du choix du modèle aux finitions.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="galerie">
+    <div class="container">
+      <div class="gallery-intro">
+        <div class="eyebrow">Notre album photo</div>
+        <h2>Votre intérieur mérite une création unique.</h2>
+        <p>Un meuble bien conçu change l'ambiance d'une pièce. Explorez notre galerie, trouvez l'inspiration et parlons ensemble du mobilier que vous imaginez.</p>
+        <a class="btn btn-gold" href="https://wa.me/221763263633?text=Bonjour%20DIAW%20MENUISIER%20BOIS%2C%20j%27aimerais%20un%20devis%20pour%20un%20meuble%20sur%20mesure." target="_blank" rel="noopener noreferrer">Créer mon meuble sur mesure</a>
+      </div>
+
+      <div class="section-heading">
+        <h2>Quelques réalisations en images</h2>
+        <p>Cliquez sur une photo pour l'afficher en grand.</p>
+      </div>
+
+      <div class="gallery">
+        <a class="gallery-item" href="https://res.cloudinary.com/dv4harxzo/image/upload/v1778238065/images_lcpv1n.jpg" data-index="0" aria-label="Agrandir la photo 1">
+          <img src="https://res.cloudinary.com/dv4harxzo/image/upload/v1778238065/images_lcpv1n.jpg" alt="Réalisation de menuiserie bois 1" loading="lazy">
+          <span class="photo-caption"><small>DIAW MENUISIER BOIS</small><strong>Le bois, avec caractère</strong></span>
+        </a>
+
+        <a class="gallery-item" href="https://res.cloudinary.com/dv4harxzo/image/upload/v1778239283/images_1_tkyb0n.jpg" data-index="1" aria-label="Agrandir la photo 2">
+          <img src="https://res.cloudinary.com/dv4harxzo/image/upload/v1778239283/images_1_tkyb0n.jpg" alt="Réalisation de menuiserie bois 2" loading="lazy">
+          <span class="photo-caption"><small>Nos réalisations</small><strong>Le sens du détail</strong></span>
+        </a>
+
+        <a class="gallery-item" href="https://res.cloudinary.com/dv4harxzo/image/upload/v1778240119/images_5_otr4ym.jpg" data-index="2" aria-label="Agrandir la photo 3">
+          <img src="https://res.cloudinary.com/dv4harxzo/image/upload/v1778240119/images_5_otr4ym.jpg" alt="Réalisation de menuiserie bois 3" loading="lazy">
+          <span class="photo-caption"><small>Création bois</small><strong>Style et élégance</strong></span>
+        </a>
+
+        <a class="gallery-item" href="https://res.cloudinary.com/dv4harxzo/image/upload/v1778240119/images_4_i7ivfp.jpg" data-index="3" aria-label="Agrandir la photo 4">
+          <img src="https://res.cloudinary.com/dv4harxzo/image/upload/v1778240119/images_4_i7ivfp.jpg" alt="Réalisation de menuiserie bois 4" loading="lazy">
+          <span class="photo-caption"><small>Mobilier sur mesure</small><strong>Une finition soignée</strong></span>
+        </a>
+
+        <a class="gallery-item" href="https://res.cloudinary.com/dv4harxzo/image/upload/v1778240120/images_6_wcn1wo.jpg" data-index="4" aria-label="Agrandir la photo 5">
+          <img src="https://res.cloudinary.com/dv4harxzo/image/upload/v1778240120/images_6_wcn1wo.jpg" alt="Réalisation de menuiserie bois 5" loading="lazy">
+          <span class="photo-caption"><small>DIAW MENUISIER BOIS</small><strong>Des idées à concrétiser</strong></span>
+        </a>
+      </div>
+
+      <p class="gallery-note">Vous avez une idée en tête ? Envoyez-nous votre modèle ou une photo sur WhatsApp pour en discuter.</p>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="eyebrow">Votre projet commence ici</div>
+      <h2>Imaginons ensemble votre prochain meuble.</h2>
+      <p>Besoin d'un meuble sur mesure, d'une porte ou d'un aménagement en bois ? Contactez-nous pour échanger sur votre besoin et demander un devis.</p>
+      <a class="btn btn-gold" href="https://wa.me/221763263633?text=Bonjour%2C%20je%20souhaite%20demander%20un%20devis%20chez%20DIAW%20MENUISIER%20BOIS." target="_blank" rel="noopener noreferrer">Demander un devis sur WhatsApp</a>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Restons en contact</div>
+        <h2>Parlons de votre projet</h2>
+        <p>Notre équipe est à votre écoute pour vos demandes et vos idées de menuiserie.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Téléphone</h3>
+          <p><a href="tel:+221763263633">+221 77 636 68 75 </a></p>
+          <p><a href="tel:+221776366875">+221 76 326 36 33 </a></p>
+        </div>
+
+        <div class="contact-card">
+          <h3>E-mail</h3>
+          <p><a href="mailto:diawmenuisier@gmail.com">diawmenuisier@gmail.com</a></p>
+        </div>
+
+        <div class="contact-card">
+          <h3>Adresse</h3>
+          <p>Castors – Route Front de Terre, Dakar</p>
+        </div>
+
+        <div class="contact-card">
+          <h3>Horaires</h3>
+          <p>Du lundi au samedi</p>
+          <p>08h00 – 18h00</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<!-- SECTION PRÉSENTATION DU CONCEPTEUR -->
+<section class="createur-section" id="createur">
+  <div class="createur-card">
+
+    <img
+      src="https://res.cloudinary.com/dv4harxzo/image/upload/v1793182817/FB_IMG_1793181334714_ixwyyo.jpg"
+      alt="Khadim Diaw, concepteur de sites web"
+      class="createur-photo"
+      loading="lazy">
+
+    <div class="createur-info">
+
+      <span class="createur-label">
+        CONCEPTION WEB & SOLUTIONS NUMÉRIQUES
+      </span>
+
+      <div class="createur-separateur"></div>
+
+      <h2>KHADIM DIAW</h2>
+
+      <h3>
+        FULL-STACK DEVELOPER <br>
+        CALL📱 78 460 44 08 <br>
+      </h3>
+
+      <p>
+        Passionné par l'informatique et les nouvelles technologies,
+        je conçois et développe des sites web modernes, professionnels
+        et adaptés aux besoins des entreprises.
+      </p>
+
+      
+
+      <div class="createur-competences">
+        <span>💻 Développement web</span>
+        <span>🌐 Full Stack</span>
+        <span>📱 Design responsive</span>
+        <span>🚀 Solutions numériques</span>
+      </div>
+
+    </div>
   </div>
 </section>
 
-    <!-- ================= WHATSAPP BUTTON ================= -->
-<a href="https://wa.me/221763263633" class="whatsapp">
-    WhatsApp
-</a>
+  
+  
+</main>
 
-    
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visionneuse de photos">
+  <button class="lightbox-close" id="closeLightbox" aria-label="Fermer">&times;</button>
+  <button class="lightbox-prev" id="prevPhoto" aria-label="Photo précédente">&#8249;</button>
+  <img id="lightboxImage" src="" alt="Photo agrandie">
+  <button class="lightbox-next" id="nextPhoto" aria-label="Photo suivante">&#8250;</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
+
+
+   
+
 <footer>
-    © 2026 KHADIM DIAW – DIAW MENUISIER BOIS♡
+  <div class="container">
+    © 2026 <strong>DIAW MENUISIER BOIS</strong> .
+  </div>
 </footer>
 
 <script>
-function toggleMenu() {
-    const menu = document.getElementById("menu");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
-}
-</script>
+  const photoLinks = [...document.querySelectorAll(".gallery-item")];
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImage = document.getElementById("lightboxImage");
+  const lightboxCounter = document.getElementById("lightboxCounter");
+  let currentPhoto = 0;
 
+  function showPhoto(index) {
+    currentPhoto = (index + photoLinks.length) % photoLinks.length;
+    const image = photoLinks[currentPhoto].querySelector("img");
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+    lightboxCounter.textContent =
+      `${currentPhoto + 1} / ${photoLinks.length}`;
+  }
+
+  function openLightbox(index) {
+    showPhoto(index);
+    lightbox.classList.add("open");
+    document.body.style.overflow = "hidden";
+    document.getElementById("closeLightbox").focus();
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  photoLinks.forEach((link, index) => {
+    link.addEventListener("click", event => {
+      event.preventDefault();
+      openLightbox(index);
+    });
+  });
+
+  document.getElementById("closeLightbox")
+    .addEventListener("click", closeLightbox);
+
+  document.getElementById("prevPhoto")
+    .addEventListener("click", () => showPhoto(currentPhoto - 1));
+
+  document.getElementById("nextPhoto")
+    .addEventListener("click", () => showPhoto(currentPhoto + 1));
+
+  lightbox.addEventListener("click", event => {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", event => {
+    if (!lightbox.classList.contains("open")) return;
+
+    if (event.key === "Escape") closeLightbox();
+    if (event.key === "ArrowLeft") showPhoto(currentPhoto - 1);
+    if (event.key === "ArrowRight") showPhoto(currentPhoto + 1);
+  });
+
+
+const menuToggle = document.getElementById("menuToggle");
+const mainMenu = document.getElementById("mainMenu");
+
+menuToggle.addEventListener("click", function () {
+  const isOpen = mainMenu.classList.toggle("open");
+
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen ? "Fermer le menu" : "Ouvrir le menu"
+  );
+
+  menuToggle.querySelector(".menu-icon").textContent =
+    isOpen ? "✕" : "☰";
+});
+
+mainMenu.querySelectorAll("a").forEach(function (link) {
+  link.addEventListener("click", function () {
+    mainMenu.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Ouvrir le menu");
+    menuToggle.querySelector(".menu-icon").textContent = "☰";
+  });
+});
+
+document.addEventListener("click", function (event) {
+  if (!event.target.closest(".menu-container")) {
+    mainMenu.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Ouvrir le menu");
+    menuToggle.querySelector(".menu-icon").textContent = "☰";
+  }
+});
+
+  
+</script>
 </body>
-</html
+</html>
