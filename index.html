@@ -18,6 +18,10 @@
 <!-- COULEUR DU NAVIGATEUR SUR MOBILE -->
 <meta name="theme-color" content="#171713">
 
+<link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#171713">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="DIAW MENUISIER">
 
   <style>
     :root {
@@ -1249,6 +1253,17 @@ document.addEventListener("click", function (event) {
     menuToggle.querySelector(".menu-icon").textContent = "☰";
   }
 });
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js")
+      .catch(error => console.error(
+        "Erreur d'enregistrement du service worker :", error
+      ));
+  });
+}
+</script>
 
   
 </script>
